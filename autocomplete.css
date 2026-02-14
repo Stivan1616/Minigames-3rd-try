@@ -1,0 +1,87 @@
+/* --- Autocomplete Styles --- */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 0 0 8px 8px;
+    z-index: 50;
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #e2e8f0;
+    display: none; /* Controlled by JS class 'hidden' */
+}
+
+.autocomplete-list:not(.hidden) {
+    display: block;
+}
+
+.autocomplete-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s;
+    text-transform: capitalize;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover, .autocomplete-item.active {
+    background-color: #f7fafc;
+}
+
+/* Retro Theme Autocomplete */
+.retro .autocomplete-list {
+    background: #000;
+    border: 2px solid #FFCB05;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.retro .autocomplete-item {
+    color: #FFCB05; /* Pokemon Yellow */
+    font-size: 0.7rem;
+    border-bottom: 1px dashed #336600; /* Dark Green */
+    padding: 12px 10px;
+}
+
+.retro .autocomplete-item:hover, .retro .autocomplete-item.active {
+    background-color: #003300; /* Dark Green bg */
+    color: #fff;
+    cursor: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png'), pointer;
+}
+
+/* Scrollbar styling */
+.autocomplete-list::-webkit-scrollbar {
+    width: 8px;
+}
+.autocomplete-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.autocomplete-list::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.retro .autocomplete-list::-webkit-scrollbar-track {
+    background: #000;
+}
+.retro .autocomplete-list::-webkit-scrollbar-thumb {
+    background: #FFCB05;
+    border-radius: 0;
+}
